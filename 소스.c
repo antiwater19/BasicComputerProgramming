@@ -1,6 +1,3 @@
-/* 첫번째 프로그래밍*/
-#define _CRT_SECURE_NO_WARNINGS  
-#include <stdio.h>
 
 /* 첫번째 프로그래밍*/
 #define _CRT_SECURE_NO_WARNINGS
@@ -79,7 +76,7 @@ int ex1230_1(void)
 	return 0;
 }
 
-int main(void)
+int ex1230_2(void)
 {
 	int x = 0;
 	printf("변수x의 크기 %d\n", sizeof(x));
@@ -91,5 +88,59 @@ int main(void)
 	printf("float형의 크기 %d\n", sizeof(float));
 	printf("double형의 크기 %d\n", sizeof(double));
 
+	return 0;
+}
+
+int ex1230_3(void) // 형식 지정자
+{
+	int x = 10; // 여러가지 진수표현
+
+	printf("10진수 출력 = %d\n", x);
+	printf("8진수 출력 = %#o\n", x); // #을 붙이면 앞에 0이 따로 붙고 진짜 메모리처럼 나온다.
+	printf("16진수 출력 = %#x\n\n\n", x);
+
+	return 0;
+}
+
+
+#define TAX_RATE 0.2 // 기호상수 2
+int ex1230_4(void) 
+{
+	const int MONTHS = 12; // 기호상수 2
+
+	int m_salary, y_salary; // 변수 선언 
+
+	printf("월급을 입력하세요 "); // 입력안내문
+	scanf("%d", &m_salary);
+	y_salary = MONTHS * m_salary;
+	printf("연봉은 %d입니다.\n", y_salary);
+	printf("세금은 %30.25f입니다.\n", y_salary * TAX_RATE);
+	return 0;
+}
+
+int ex1230_5(void)
+{ // 시험에 나옴
+	char code1 = 'A'; //문자 상수로 초기화
+	char code2 = 65; //아스키 코드로 초기화
+	printf("code1 = %c\n", code1);
+	printf("code2 = %c\n", code1 + 1); // code1 + 1 하면 아스키 코드 표기상 B여서 B로 출력된다.
+	printf("code1 = %d\n", code1); // 아스키 코드로 표현된다.
+	printf("code2 = %d\n", code1 + 1);
+
+	return 0;
+}
+
+#define SPEED 300000.000000 // 빛의 속도
+int main(void)
+{
+	const double distance= 149600000.000000; // 지구와 태양과의 거리
+
+	double time;
+
+	time = distance / SPEED; // 빛 도달 시간
+	printf("빛의 속도 %lf km/s\n", SPEED);
+	printf("태양과 지구와의 거리 %lf km\n", distance);
+	printf("도달 시간 : %lf\n", time);
+	
 	return 0;
 }
