@@ -172,7 +172,7 @@ void ex1231_2(void)
 	result = x / y;
 	printf("%d / %d = %d\n", x, y, result);
 	result = x % y;
-	printf("%d / %d = %d\n", x, y, result);
+	printf("%d %% %d = %d\n", x, y, result);
 }
 
 #define SEC_PER_MINUTE 60 // 1분은 60초
@@ -218,4 +218,77 @@ int ex1231_5(void) // 복합 대입 연산자
 	return 0;
 }
 
+int ex1231_6(void)
+{
+	int x, y;
 
+	printf("두개의 정수를 입력하시오: ");
+	scanf("%d %d", &x, &y);
+
+	printf("x == y의 결과는 ? : %d", x == y);
+}
+
+#include <math.h>
+int ex1231_7(void) // 오차 범위
+{
+	double a, b;
+	a = (0.3 * 3) + 0.1;
+	b = 1;
+	printf("a==b의 결과 %d \n", a == b); // 0은 거짓 1은 참 같은건데 인식을 못함
+
+	printf("fabs(a-b)<0.00001의 결과: %d", fabs(a - b) < 0.00001);
+	return 0;
+}
+
+int ex1231_8(void) // Lab: 윤년
+{
+	int year, result;
+
+	printf("연도를 입력하시오 : "); // 연도 입력
+	scanf("%d", &year);
+
+	result = ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+	//printf("result = %d\n", result); // 결과
+
+	(result == 1) ? printf("윤년입니다\n") : printf("윤년이 아닙니다.\n"); // ? : 는 조건 연산자 이다.
+	printf((result == 1) ? printf("윤년입니다\n") : printf("윤년이 아닙니다.\n"));
+	
+	return 0;
+}
+
+int ex1231_9(void) // 자동적 형변환, 명시적 형변환
+{
+	int i;
+	double f;
+	
+	f = 5 / 4;
+	printf("%lf\n", f);
+
+	f = (double)5 / 4;
+	printf("%lf\n", f);
+
+	f = 5.0 / 4;
+	printf("%lf\n", f);
+
+	f = (double)5 / (double)4;
+	printf("%lf\n", f);
+
+	i = 1.3 + 1.8;
+	printf("%d\n", i);
+
+	i = (int)1.3 + (int)1.8;
+	printf("%d\n", i);
+
+	return 0;
+}
+
+int main(void) // 실습 과제
+{
+	double real1 = 0, real2 = 0;
+
+	printf("2개의 실수를 입력하시오 : ");
+	scanf("%lf %lf", &real1, &real2);
+
+	printf("합의 정수부 = %d", (int)real1 + (int)real2);
+	return 0;
+}
