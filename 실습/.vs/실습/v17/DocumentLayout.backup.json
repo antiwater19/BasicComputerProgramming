@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\\uC2E4\uC2B5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AFB54468-18E3-480F-A496-42C328F37F0A}|\uC2E4\uC2B5.vcxproj|C:\\Users\\user\\Desktop\\\uC2E4\uC2B5\\\uC2E4\uC2B5.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AFB54468-18E3-480F-A496-42C328F37F0A}|\uC2E4\uC2B5.vcxproj|solutionrelative:\uC2E4\uC2B5.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "\uC2E4\uC2B5.c",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\\uC2E4\uC2B5\\\uC2E4\uC2B5.c",
+              "RelativeDocumentMoniker": "\uC2E4\uC2B5.c",
+              "ToolTip": "C:\\Users\\user\\Desktop\\\uC2E4\uC2B5\\\uC2E4\uC2B5.c",
+              "RelativeToolTip": "\uC2E4\uC2B5.c",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAAAKYAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-12-31T01:07:12.719Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

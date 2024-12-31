@@ -1,0 +1,36 @@
+﻿  실습.c
+C:\Users\user\Desktop\실습\실습.c(22,13): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\실습\실습.c(29,28): warning C4101: 'div' :참조되지 않은 지역 변수입니다.
+C:\Users\user\Desktop\실습\실습.c(29,12): warning C4101: 'sum' :참조되지 않은 지역 변수입니다.
+C:\Users\user\Desktop\실습\실습.c(29,23): warning C4101: 'mul' :참조되지 않은 지역 변수입니다.
+C:\Users\user\Desktop\실습\실습.c(29,17): warning C4101: 'diff' :참조되지 않은 지역 변수입니다.
+C:\Users\user\Desktop\실습\실습.c(67,13): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\실습\실습.c(80,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+      C:\Users\user\Desktop\실습\실습.c(80,9):
+      서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+  
+C:\Users\user\Desktop\실습\실습.c(82,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+      C:\Users\user\Desktop\실습\실습.c(82,9):
+      서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+  
+C:\Users\user\Desktop\실습\실습.c(83,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+      C:\Users\user\Desktop\실습\실습.c(83,9):
+      서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+  
+C:\Users\user\Desktop\실습\실습.c(84,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+      C:\Users\user\Desktop\실습\실습.c(84,9):
+      서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+  
+C:\Users\user\Desktop\실습\실습.c(85,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+      C:\Users\user\Desktop\실습\실습.c(85,9):
+      서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+  
+C:\Users\user\Desktop\실습\실습.c(86,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+      C:\Users\user\Desktop\실습\실습.c(86,9):
+      서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+  
+C:\Users\user\Desktop\실습\실습.c(87,9): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'size_t'입니다.
+      C:\Users\user\Desktop\실습\실습.c(87,9):
+      서식 문자열에서 '%zd'을(를) 사용하는 것이 좋습니다.
+  
+  실습.vcxproj -> C:\Users\user\Desktop\실습\x64\Debug\실습.exe
