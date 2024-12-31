@@ -131,7 +131,7 @@ int ex1230_5(void)
 }
 
 #define SPEED 300000.000000 // 빛의 속도
-int main(void)
+int ex1230_6(void) // 실습
 {
 	const double distance= 149600000.000000; // 지구와 태양과의 거리
 
@@ -142,5 +142,18 @@ int main(void)
 	printf("태양과 지구와의 거리 %lf km\n", distance);
 	printf("도달 시간 : %lf\n", time);
 	
+	return 0;
+}
+
+int ex1231_1(void) // inch를 cm으로 바꾸는 실습
+{
+	const double inch_weight = 2.54; // 기호상수 선언(변수가 바뀌지 않음)
+	double inch = 0;
+
+	printf("inch를 입력하시오: ");
+	scanf("%lf", &inch); 
+
+	printf("%lfinch는 %lfcm 입니다.", inch, inch * inch_weight);
+
 	return 0;
 }
