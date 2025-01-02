@@ -377,7 +377,7 @@ int ex0102_3(void) // 성적을 입력 받아서 결정하는 프로그램
 	return 0;
 }
 
-int main(void) // 이차 방정식
+int ex0102_4(void) // 이차 방정식
 {
 	double a = 0.0, b = 0.0, c = 0.0, dis = 0.0;
 
@@ -397,4 +397,64 @@ int main(void) // 이차 방정식
 		else
 			printf("실근이 존재하지 않습니다.\n");
 	}
+}
+
+int ex0102_5(void)
+{
+	char op;
+	int x = 0, y = 0, result = 0;
+
+	printf("수식을 입력하시오 : ");
+	printf("(예: 2 + 5)\n");
+	printf(">>");
+	scanf("%d %c %d", &x, &op, &y);
+
+	switch(op)
+	{
+	case '+':
+		printf("%d %c %d = %d\n", x, op, y, x + y);
+		break;
+	case '-':
+		printf("%d %c %d = %d\n", x, op, y, x - y);
+		break;
+	case '*':
+		printf("%d %c %d = %d\n", x, op, y, x * y);
+		break;
+	case '/':
+		printf("%d %c %d = %d\n", x, op, y, x / y);
+		break;
+	case '%':
+		printf("%d %c %d = %d\n", x, op, y, x % y);
+		break;
+	default:
+		printf("연산자가 올바르지 않습니다. 다시 입력해주세요.\n\n\n");
+		break;
+	}
+	return 0;
+}
+
+int main(void) // switch case를 if else문으로 변경
+{
+	char op;
+	int x = 0, y = 0, result = 0;
+
+	printf("수식을 입력하시오 : ");
+	printf("(예: 2 + 5)\n");
+	printf(">>");
+	scanf("%d %c %d", &x, &op, &y);
+
+	if (op == '+')
+		printf("%d %c %d = %d\n", x, op, y, x + y);
+	else if (op == '-')
+		printf("%d %c %d = %d\n", x, op, y, x - y);
+	else if (op == '*')
+		printf("%d %c %d = %d\n", x, op, y, x * y);
+	else if (op == '/')
+		printf("%d %c %d = %d\n", x, op, y, x / y);
+	else if (op == '%')
+		printf("%d %c %d = %d\n", x, op, y, x % y);
+	else
+		printf("지원되지 않는 연산자입니다. \n");
+
+	return 0;
 }
