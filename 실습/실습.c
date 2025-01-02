@@ -1,5 +1,6 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <math.h>
 
 
 int ex1226(void) { 
@@ -228,7 +229,7 @@ int ex1231_6(void)
 	printf("x == y의 결과는 ? : %d", x == y);
 }
 
-#include <math.h>
+//#include <math.h>
 int ex1231_7(void) // 오차 범위
 {
 	double a, b;
@@ -282,7 +283,7 @@ int ex1231_9(void) // 자동적 형변환, 명시적 형변환
 	return 0;
 }
 
-int main(void) // 실습 과제
+int ex1231_10(void) // 실습 과제
 {
 	double real1 = 0, real2 = 0;
 
@@ -291,4 +292,109 @@ int main(void) // 실습 과제
 
 	printf("합의 정수부 = %d", (int)real1 + (int)real2);
 	return 0;
+}
+
+int ex0102_1(void) // 아침 실습 과제 
+{
+	int x = 0, y = 0;
+	printf("x, y 좌표값을 차례로 넣으시오. \n>> ");
+	scanf("%d %d", &x, &y);
+
+	// 원점 위치
+	(x == 0 && y == 0) ? printf("원점입니다.") : printf("");
+
+	// 축 위치
+	(x == 0 && y != 0) ? printf("x축위에 위치합니다.") : printf("");
+	(x != 0 && y == 0) ? printf("y축위에 위치합니다.") : printf("");
+	
+	// 사분면 위치
+	(x > 0 && y > 0) ? printf("1사분면") : printf("");
+	(x < 0 && y > 0) ? printf("2사분면") : printf("");
+	(x < 0 && y < 0) ? printf("3사분면") : printf("");
+	(x > 0 && y < 0) ? printf("4사분면") : printf("");
+
+	return 0;
+}
+
+int ex0102_2(void) // Lab: 윤년 (조건문ver)
+{
+	int year, result;
+
+	printf("연도를 입력하시오 : "); // 연도 입력
+	scanf("%d", &year);
+
+	result = ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+
+	// 조건문
+	if (result == 1) { 
+		printf("윤년입니다.\n");
+	}
+	else if (result == 0) {
+		printf("윤년이 아닙니다.\n");
+	}
+	
+	return 0;
+}
+
+int ex0102_3(void) // 성적을 입력 받아서 결정하는 프로그램
+{
+	int score = 0;
+	char level = NULL;
+
+	printf("성적을 입력하시오: ");
+	scanf("%d", &score);
+	//printf("level을 입력하세요");
+	//scanf("%c", &level);
+
+	if (score >= 90) {
+		if (score >= 95)
+			printf("합격 학점: A+\n");
+		else if (score < 95)
+			printf("합격 학점: A0\n");
+	}
+	else if (score >= 80) {
+		if (score >= 85)
+			printf("합격 학점: B+\n");
+		else if (score < 85)
+			printf("합격 학점: B0\n");
+	}
+	else if (score >= 70) {
+		if (score >= 75)
+			printf("합격 학점: C+\n");
+		else if (score < 75)
+			printf("합격 학점: C0\n");
+	}
+	else if (score >= 60) {
+		if (score >= 65)
+			printf("합격 학점: D+\n");
+		else if (score < 65)
+			printf("합격 학점: D0\n");
+	}
+	else {
+		printf("불합격 학점:F\n");
+	}
+
+	return 0;
+}
+
+int main(void) // 이차 방정식
+{
+	double a = 0.0, b = 0.0, c = 0.0, dis = 0.0;
+
+	printf("계수 a, 계수 b, 계수 c를 차례대로 입력하시오: ");
+	scanf("%lf %lf %lf", &a, &b, &c);
+
+	if (a == 0) {
+		printf("방정식의 근은 %f입니다.\n", -c/b);
+	}
+	else {
+		dis = (b * b - (4.0 * a * c)); //판별식을 구한다
+		
+		if (dis >= 0) {
+			printf("방정식의 근은 %f입니다\n", ((-b + sqrt(dis)) / 2.0 * a));
+			printf("방정식의 근은 %f입니다\n", ((-b - sqrt(dis)) / 2.0 * a));
+		}
+		else
+			printf("실근이 존재하지 않습니다.\n");
+	}
 }
