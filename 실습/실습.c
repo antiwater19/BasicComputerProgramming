@@ -433,7 +433,7 @@ int ex0102_5(void)
 	return 0;
 }
 
-int main(void) // switch case를 if else문으로 변경
+int ex0102_6(void) // switch case를 if else문으로 변경
 {
 	char op;
 	int x = 0, y = 0, result = 0;
@@ -458,3 +458,177 @@ int main(void) // switch case를 if else문으로 변경
 
 	return 0;
 }
+
+int ex0103_1(void) // 아침 실습
+{
+	int x=0, y=0;
+
+	printf("x,y 좌표값을 차례로 넣으시오 .\n");
+	printf(">>");
+	scanf("%d %d", &x, &y);
+
+	if (x == 0 && y == 0) {
+		printf("원점입니다.\n");
+	}
+	else if (x == 0 && y != 0) {
+		printf("y축 위에 위치합니다.\n");
+	}
+	else if (x != 0 && y == 0) {
+		printf("x축 위에 위치합니다.\n");
+	}
+	else if (x > 0 && y > 0) {
+		printf("1사분면\n");
+	}
+	else if (x < 0 && y > 0) {
+		printf("2사분면\n");
+	}
+	else if (x < 0 && y < 0) {
+		printf("3사분면\n");
+	}
+	else if (x > 0 && y < 0) {
+		printf("4사분면\n");
+	}
+
+	return 0;
+}
+
+int ex0103_2(void)
+{
+	int n = 0, i = 1, sum = 0;
+	printf("합을 구하는 것\n");
+	scanf("%d", &n);
+
+	while (i <= n)  // 안에 있는 내용이 참이면 계속 반복
+	{
+		sum = sum + i; // sum += i ;
+		i++;
+	}
+	printf("%d", sum);
+	return 0;
+}
+
+int ex0103_3(void) // 예제 #2
+{
+	int n = 0;
+
+	printf("========================\n");
+	printf("    n          n의 제곱 \n");
+	printf("========================\n");
+
+	n = 1;
+	while (n <= 10)
+	{
+		printf("%5d      %5d\n", n, n * n);
+		n++;
+	}
+	return 0;
+}
+
+int ex0103_4(void) // 예제 #5
+{
+	int n = 0, sum = 0, i = 5;
+
+	printf("정수 다섯개를 차례로 입력하시오:");
+	while (i)// while(count < 5)
+	{
+		i--;
+		scanf("%d", &n);
+		sum += n;
+	}
+	printf("5개 정수의 합은 %d입니다.\n", sum);
+	return 0;
+}
+
+int ex0103_5(void) // 원하는 만큼 학생 성적 입력후 평균 구하기 (세티널)
+{
+	int score = 0, grade = 0, sum = 0, n = 0;
+	double average = 0.0;
+
+	while (grade >= 0)
+	{
+		printf("성적을 입력하시오: ");
+		scanf("%d", &grade);
+
+		sum += grade;
+		n++;
+	}
+	// 보초값 수정
+	sum = sum - grade; 
+	n--;
+
+	average = sum / n;
+	printf("학생들의 성적 평균은: %lf", average);
+
+	return 0;
+}
+
+int ex0103_6(void)
+{
+	int n = 0, i = 1, sum = 0;
+	printf("누적 합을 구하는 것\n");
+	scanf("%d", &n);
+
+	//while (i <= n)  // 안에 있는 내용이 참이면 계속 반복
+	//{
+	//	sum = sum + i; // sum += i ;
+	//	i++;
+	//}
+	// for문으로 변경
+	for (int j = 1; j <= n; j++) {
+		sum += j;
+	}
+
+	printf("%d", sum);
+	return 0;
+}
+
+int ex0103_7(void)
+{
+	int n = 0;
+
+	printf("========================\n");
+	printf("    n          n의 제곱 \n");
+	printf("========================\n");
+
+	/*while (n <= 10)
+	{
+		printf("%5d      %5d\n", n, n * n);
+		n++;
+	}*/
+	// for문으로 변경 시킨것 
+	for (int i = 1; i <= 10; i++) {
+		printf("%5d      %5d\n", i, i * i * i); // 세제곱
+	}
+
+	return 0;
+}
+
+int ex0103_8(void)
+{
+	int fact = 1;
+	int i, n;
+	printf("정수를 입력하세요:");
+	scanf("%d", &n);
+
+	for (i = 1; i <= n; i++) {
+		fact *= i;
+	}
+	printf("%d!는 %d입니다.\n", n, fact);
+	return 0;
+}
+
+int main(void)
+{
+	int fact = 1;
+	int i = 1, n;
+	printf("정수를 입력하세요:");
+	scanf("%d", &n);
+
+	while (i <= n) {
+		fact *= i;
+		i++;
+	}
+	printf("%d!는 %d입니다.\n", n, fact);
+	return 0;
+}
+
