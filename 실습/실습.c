@@ -635,6 +635,20 @@ int ex0103_9(void)
 //-----------------------------------------------------------------------------------------
 // 기말고사 범위 스타트
 
+void print_star(void) {
+	for (int i = 0; i < 3; i++)
+		printf("*");
+	printf("\n");
+}
+
+int ex0108_0(void)
+{
+	print_star();
+	print_star();
+	print_star();
+	return 0;
+}
+
 int ex0108_1(void)
 {
 	int x = 0, y = 0;
@@ -673,12 +687,10 @@ void ex0108_2(void)
 }
 
 int add(int x, int y) {
-	int sum = 0;
-	sum = x + y;
-	return sum;
+	return (x + y);
 }
 
-void main(void)
+void ex0108_3(void)
 {
 	int x, y = 0, sum;
 	x = get_integer();
@@ -686,5 +698,39 @@ void main(void)
 	sum = add(x, y);
 	printf("두수의 합은%d이다.\n", sum);
 
+	return;
+}
+
+int factorial(int n) {
+	int fact = 1;
+	for (int i = 1; i <= n; i++) {
+		fact *= i;
+	}
+	return fact;
+}
+
+void ex0108_4(void)
+{
+	int n;
+	printf("알고 싶은 팩토리얼의 값은?: ");
+	scanf("%d", &n);
+	printf("%d!의 값은 %d입니다. \n", n, factorial(n));
+	return;
+}
+
+int combination(int n, int r) {
+	int fact = 0;
+	fact = factorial(n) / (factorial(n - r) * factorial(r));
+	return fact;
+}
+
+void main(void)
+{
+	int n, r;
+
+	n = get_integer();
+	r = get_integer();
+
+	printf("C(%d, %d)= %d \n", n, r, combination(n, r));
 	return;
 }
