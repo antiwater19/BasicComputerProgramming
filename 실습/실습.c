@@ -617,7 +617,7 @@ int ex0103_8(void)
 	return 0;
 }
 
-int main(void)
+int ex0103_9(void)
 {
 	int fact = 1;
 	int i = 1, n;
@@ -632,3 +632,59 @@ int main(void)
 	return 0;
 }
 
+//-----------------------------------------------------------------------------------------
+// 기말고사 범위 스타트
+
+int ex0108_1(void)
+{
+	int x = 0, y = 0;
+	for (x = 1; x <= 6; x++) {
+		for (y = 1; y <= 6; y++) {
+			if ((x + y) == 6) {
+				printf("(%d, %d)\n", x, y);
+			}
+		}
+	}
+	return 0;
+}
+
+int max(int x, int y) {
+	if (x > y) return x;
+	else return y;
+}
+
+int get_integer() {
+	int x = 0;
+	printf("정수를 입력하시오: ");
+	scanf("%d", &x);
+	return x;
+}
+
+void ex0108_2(void)
+{
+	int x, y;
+	x = get_integer();
+	y = get_integer();
+	int larger;
+	larger = max(x, y);
+	printf("더 큰값은 %d입니다. \n", larger);
+	return;
+
+}
+
+int add(int x, int y) {
+	int sum = 0;
+	sum = x + y;
+	return sum;
+}
+
+void main(void)
+{
+	int x, y = 0, sum;
+	x = get_integer();
+	y = get_integer();
+	sum = add(x, y);
+	printf("두수의 합은%d이다.\n", sum);
+
+	return;
+}
