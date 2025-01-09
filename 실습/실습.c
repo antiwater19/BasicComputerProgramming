@@ -724,7 +724,7 @@ int combination(int n, int r) {
 	return fact;
 }
 
-void main(void)
+void ex0108_5(void)
 {
 	int n, r;
 
@@ -734,3 +734,89 @@ void main(void)
 	printf("C(%d, %d)= %d \n", n, r, combination(n, r));
 	return;
 }
+
+int get_sum(int n) {
+	int sum = 0;
+	for (int i = 1; i <= n; i++) {
+		sum += i;
+	}
+	return sum;
+}
+
+void ex0109_1(void)
+{
+	int i, n, sum = 0;
+	printf("1부터 합을 구할 임의의 정수를 입력하시오.");
+	scanf("%d", &n);
+
+	sum = get_sum(n);
+
+	printf("1부터 %5d까지의 합은 %5d입니다. \n", n, sum);
+	return;
+}
+
+int ex0109_2(void)
+{
+	int i;
+
+	for (i = 0; i < 5; i++) {
+		int temp = 1;
+		printf("temp = %d\n", temp);
+		temp++;
+	}
+	return 0;
+}
+
+void save(int amount) {
+	static int balance = 0;
+	if (amount >= 0) {
+		printf("%d \t\t %d\n", amount, balance + amount);
+	}
+	else if (amount < 0) {
+		printf(" \t%d\t %d\n", abs(amount), balance + amount);
+	}
+	return;
+}
+
+void ex0109_3(void)
+{
+	int amount; //
+	
+	while (1) {
+		printf("금액을 입력하세요:");
+		scanf("%d", &amount);
+		if (amount == 0) break;
+		printf("=============================\n");
+		printf("입금 \t출금\t 잔고\n");
+		printf("=============================\n");
+		save(amount);
+		printf("=============================\n");
+	}
+	return;
+}
+
+// static이라 붙어있으면 가져다 쓸수 없고 전역 변수만 쓸 수 있다.
+// extern 명령어 (지역변수를 가져다 쓸수 없다.) *명확하게 알아야함*
+// 난수 시험 안나옴 
+// 가변 매게 변수 시험에 안나옴
+
+// 재귀함수(순환호출, )
+
+// 재귀함수 팩토리얼 버전
+int factorial_SelfFunction(int n) {
+	if (n == 1) return 1;
+	else return (n * factorial_SelfFunction(n - 1));
+}
+
+// 최대 공약수 구하기
+
+int gcd(int x, int y) {
+	
+}
+
+int main(void)
+{
+	printf("%d\n", gcd(30, 20));
+	return 0;
+}
+
