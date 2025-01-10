@@ -3,6 +3,7 @@
 #include <math.h>
 
 
+
 int ex1226(void) { 
 	printf("첫번째 프로그래밍입니다.\n");
 	return 0;
@@ -808,15 +809,137 @@ int factorial_SelfFunction(int n) {
 	else return (n * factorial_SelfFunction(n - 1));
 }
 
-// 최대 공약수 구하기
+// 최대 공약수 구하기 (안만듬 )
 
-int gcd(int x, int y) {
-	
+double average(int people, int point) {
+	return (double)point / (double)people;
 }
 
-int main(void)
+int ex0110_1(void) // 학생수 만큼 점수 평균 구하기.
 {
-	printf("%d\n", gcd(30, 20));
+	struct Point {
+		int stu_id;
+		int kor_p;
+		int math_p;
+	};
+		
+	double total , avg;
+	struct Point s1; // 이거 좀 이상함 Pass
+	for (int i = 0; i < 3; i++) {
+			printf("학생번호, 국어, 수학 점수를 차례로 입력하세요. ");
+			scanf("%d %d %d", &s1.stu_id, &s1.kor_p, &s1.math_p);
+			total = s1.kor_p + s1.math_p;
+			average(2, total);
+			printf("%d번째 학생의 평균은 %.2lf입니다.");
+	}
+	
+
+
 	return 0;
 }
 
+// 오늘 배열 배움
+#define STUDENTS 10
+
+int ex0110_2(void) //학생평균 실습1
+{
+	int scores[STUDENTS];
+	int sum = 0;
+	double average;
+
+	for (int i = 0; i < STUDENTS; i++) {
+		printf("학생들의 성적을 입력하시오:");
+		scanf("%d", &scores[i]);
+	}
+	for (int i = 0; i < STUDENTS; i++) {
+		sum += scores[i];
+	}
+	average = (double)sum / STUDENTS;
+	printf("성적 평균 = %.2lf\n", average);
+	
+	return 0;
+}
+//잘못된 인덱스 int index[5]; index[5] = 1; (x)
+
+#include <stdlib.h>
+#include <time.h>
+#define SIZE 6
+int ex0110_3(void) // 난수 실습 2
+{
+	int freq[SIZE] = { 0 };
+	int i;
+	srand((unsigned)time(NULL));
+	for (i = 0; i < 10000; i++) {
+		++freq[rand() % 6]; //해당면의 빈도를 하나 증가한다.
+	}
+	printf("======================\n");
+	printf("면        빈도\n");
+	printf("======================\n");
+	for (i = 0; i < SIZE; i++) {
+		printf("%3d        %3d \n", i, freq[i]);
+	}
+	return 0;
+}
+
+#define SIZE2 10
+int ex0110_4(void) //minimum을  maximum으로 바꾼걸 실습3으로 제출
+{
+	int prices[SIZE] = { 0 };
+	int maximum;
+	printf("-------------------------\n");
+	printf("1 2 3 4 5 6 7 8 9 10\n");
+	printf("-------------------------\n");
+	srand((unsigned)time(NULL));
+	for (int i = 0; i < SIZE2; i++) {
+		prices[i] = (rand() % 100) + 1;
+		printf("%-3d\n", prices[i]);
+	}
+	printf("\n\n");
+	maximum = prices[0];
+	for (int i = 1; i < SIZE2; i++) {
+		if (prices[i] > maximum) {
+			maximum = prices[i];
+		}
+	}
+
+	printf("최대값은 %d입니다.\n", maximum);
+	
+	return 0;
+}
+
+// 배열 함수
+#define SIZE3 7
+void square_array(int a[], int size) {
+	for (int i = 0; i < size; i++)
+		a[i] = a[i] * a[i];
+}
+void print_array(int a[], int size) {
+	for (int i = 0; i < size; i++)
+		printf("%3d", a[i]);
+	printf("\n");
+}
+int ex0110_5(void)
+{
+	int list[SIZE3] = { 1,2,3,4,5,6,7 };
+	print_array(list, SIZE3);
+	square_array(list, SIZE3);
+	print_array(list, SIZE3);
+
+	return 0;
+}
+// 원본 배열 값 변경금지 시키고 싶을 때
+// square_array(const int a[], int size)이렇게 하면 된다.
+
+#define SIZE3 7
+void modify_array(int a[], int size) {
+	for (int i = 0; i < size; i++)
+		++a[i];
+}
+int main(void)
+{
+	int list[SIZE3] = { 1,2,3,4,5,6,7 };
+	print_array(list, SIZE3); // 배열주소 전달
+	modify_array(list, SIZE3);
+	print_array(list, SIZE3);
+	return 0;
+}
