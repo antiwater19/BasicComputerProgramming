@@ -943,3 +943,5 @@ int main(void)
 	print_array(list, SIZE3);
 	return 0;
 }
+
+// 정렬과 탐색
