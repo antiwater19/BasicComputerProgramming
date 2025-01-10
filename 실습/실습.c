@@ -945,7 +945,7 @@ int ex0110_6(void)
 }
 
 // 정렬과 탐색
-int main(void) // 순차 정렬
+int ex0110_7(void) // 순차 정렬
 {
 	int list[SIZE2] = { 3,2,9,7,1,4,8,0,6,5 };
 	int i, j, temp, least;
@@ -963,5 +963,22 @@ int main(void) // 순차 정렬
 		printf("%d ", list[i]);
 	}
 	printf("\n");
+	return 0;
+}
+
+int main(void)
+{
+	int key, i;
+	int list[SIZE2] = { 1,2,3,4,5,6,7,8,9 };
+
+	printf("탐색할 값을 입력하시오:");
+	scanf("%d", &key);
+
+	for (i = 0; i < SIZE2; i++) {
+		if (list[i] == key) {
+			printf("탐색 성공 인덱스= %d\n", i);
+		}
+	}
+	printf("탐색종료\n");
 	return 0;
 }
