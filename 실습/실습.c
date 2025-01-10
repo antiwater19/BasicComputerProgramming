@@ -935,7 +935,7 @@ void modify_array(int a[], int size) {
 	for (int i = 0; i < size; i++)
 		++a[i];
 }
-int main(void)
+int ex0110_6(void)
 {
 	int list[SIZE3] = { 1,2,3,4,5,6,7 };
 	print_array(list, SIZE3); // 배열주소 전달
@@ -945,3 +945,23 @@ int main(void)
 }
 
 // 정렬과 탐색
+int main(void) // 순차 정렬
+{
+	int list[SIZE2] = { 3,2,9,7,1,4,8,0,6,5 };
+	int i, j, temp, least;
+
+	for (i = 0; i < SIZE2 - 1; i++) {
+		least = i;
+		for (j = i + 1; j < SIZE2; j++) {
+			if (list[j] < list[least]) {
+				least = j;
+			}
+		}
+		temp = list[i];
+		list[i] = list[least];
+		list[least] = temp;
+		printf("%d ", list[i]);
+	}
+	printf("\n");
+	return 0;
+}
