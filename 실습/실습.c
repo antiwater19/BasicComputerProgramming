@@ -1045,7 +1045,7 @@ int ex0113_2(void)
 #define ROWS 3
 #define COLS 5
 
-int main(void) 
+int ex0113_3(void) 
 {
 	int a[ROWS][COLS] = { {87,98,80,76,3},{99,89,90,90,0},{65,68,50,49,0} };
 
@@ -1055,5 +1055,39 @@ int main(void)
 		final_scores[i] = a[i][0] * 0.3 + a[i][1] * 0.4 + a[i][2] * 0.2 + a[i][3] * 0.1 - a[i][4];
 		printf("학생 #%i의 최종성적 = %10.2f\n", i + 1, final_scores[i]);
 	}
+	return 0;
+}
+
+void ex0113_4(void)
+{
+	int i = 10;
+	double f = 12.3;
+	int* pi = NULL;
+
+	double* pf = NULL;
+	pi = &i;
+	pf = &f;
+
+	printf("%p %p\n", pi, &i);
+	printf("%p %p\n", pf, &f);
+	return;
+}
+
+void swap(int *px, int *py){
+	int tmp;
+
+	tmp = *px;
+	*px = *py;
+	*py = tmp;
+}
+
+int main(void)
+{
+	int a = 100, b = 200;
+	printf("a = %d b = %d\n", a, b);
+
+	swap(&a, &b);
+	//const를 붙이면 바꿀 수 없다.
+	printf("a=%d b=%d\n", a, b);
 	return 0;
 }
