@@ -1013,15 +1013,15 @@ int binary_search(int list[], int n, int key)
 			return middle;
 		}
 		else if (key > list[middle]) {
-			low = middle + 1;
+			low = middle;//+ 1;
 		}
 		else
-			high = middle - 1;
+			high = middle;//- 1;
 	}
 	return -1;
 }
 
-int main(void)
+int ex0113_2(void)
 {
 	int key;
 	int grade[SIZE4] =
@@ -1037,5 +1037,23 @@ int main(void)
 	else
 		printf("탐색 결과 : grade[%d] = %d\n", goal, grade[goal]);
 
+	return 0;
+}
+
+// 2차원 배열의 초기화
+
+#define ROWS 3
+#define COLS 5
+
+int main(void) 
+{
+	int a[ROWS][COLS] = { {87,98,80,76,3},{99,89,90,90,0},{65,68,50,49,0} };
+
+	int i;
+	double final_scores[ROWS];
+	for (i = 0; i < ROWS; i++) {
+		final_scores[i] = a[i][0] * 0.3 + a[i][1] * 0.4 + a[i][2] * 0.2 + a[i][3] * 0.1 - a[i][4];
+		printf("학생 #%i의 최종성적 = %10.2f\n", i + 1, final_scores[i]);
+	}
 	return 0;
 }
