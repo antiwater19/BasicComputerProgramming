@@ -1081,7 +1081,7 @@ void swap(int *px, int *py){
 	*py = tmp;
 }
 
-int main(void)
+int ex0113_5(void)
 {
 	int a = 100, b = 200;
 	printf("a = %d b = %d\n", a, b);
@@ -1089,5 +1089,26 @@ int main(void)
 	swap(&a, &b);
 	//const를 붙이면 바꿀 수 없다.
 	printf("a=%d b=%d\n", a, b);
+	return 0;
+}
+
+void count(void) {
+	int counter=0;
+	counter++;
+	printf("counter = %d\n", counter);
+}
+
+int exfinal_1(void) {
+	count();
+	count();
+	return 0;
+}
+
+int main(void)
+{
+	int a = 100, b = 200;
+	printf("a = %d b = %d \n", a, b);
+	swap(&a, &b);
+	printf("a = %d b = %d \n", a, b);
 	return 0;
 }
